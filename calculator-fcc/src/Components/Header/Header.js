@@ -46,7 +46,7 @@ export default class Header extends React.Component {
                                                 fontSize: "0.75rem"
                                             }
                                         },
-                                        "FCC Project: 25 + 5 Clock"
+                                        "FCC Project: Calculator"
                                         )
                                 ]
                         ),

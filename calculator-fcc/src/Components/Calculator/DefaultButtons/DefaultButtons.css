@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --min-button-size: 1.5rem;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax( calc(var(--min-button-size) + 1rem), calc(var(--min-button-size) * 3)));
+    gap: 0.5rem;
+    grid-template-areas: 
+        "power percentage sqrt backspace"
+        "mrc msub madd clear"
+        "seven eight nine devide"
+        "four five six multiply"
+        "one two three subtract"
+        "zero decimal equal add"
+    ;
+}
+
+button {
+        min-height: var(--min-button-size);
+        min-width: var(--min-button-size);
+        text-align: center;
+        border-radius: calc(var(--min-button-size) / 2);
+    }
