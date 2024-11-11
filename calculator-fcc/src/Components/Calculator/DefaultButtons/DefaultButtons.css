@@ -16,10 +16,10 @@
     grid-template-areas: 
         "power percentage sqrt backspace"
         "mrc msub madd clear"
-        "seven eight nine devide"
+        "seven eight nine divide"
         "four five six multiply"
         "one two three subtract"
-        "zero decimal equal add"
+        "zero decimal equals add"
     ;
 }
 
@@ -28,4 +28,10 @@ button {
         min-width: var(--min-button-size);
         text-align: center;
         border-radius: calc(var(--min-button-size) / 2);
-    }
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in;
+}
+
+button:hover {
+    border: 2px solid yellow;
+}

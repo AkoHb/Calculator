@@ -1,0 +1,17 @@
+// in HISTORY we might contan info looks like object:
+// [
+// time: contain time when you handleclick button with id="equals"
+// ]  
+
+export let STATE = {
+    infoLine : {
+        powerOn: false,
+        memory: [],  
+        currentUserInput: "",
+        branches: "()",
+        numIsDecimal: false,
+        history: []
+    },
+    result: 0
+
+}
