@@ -23,6 +23,10 @@
     ;
 }
 
+button#clear {
+    padding-bottom: 5px;
+}
+
 button {
         min-height: var(--min-button-size);
         min-width: var(--min-button-size);
