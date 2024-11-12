@@ -1,12 +1,37 @@
 .App {
   text-align: center;
   min-height: 80vh;
+  background-image: url("https://st3.depositphotos.com/10325516/19497/v/1600/depositphotos_194970518-stock-illustration-math-formula-calculations-background-vector.jpg");
+  background-size: contain;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+:root {
+  --buttons-bg-color: rgba(155, 155, 155, 0.8);
+}
+
+.calc-body {
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: var(--buttons-bg-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  
+
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

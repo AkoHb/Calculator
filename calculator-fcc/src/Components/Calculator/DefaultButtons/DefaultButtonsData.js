@@ -13,7 +13,7 @@ export const DefaultButtonsData =  [
     },
     {
         id: "sqrt",
-        name: "square",
+        name: "root",
         value: '\u{221A}',
         type: "button",
     },
@@ -141,6 +141,31 @@ export const DefaultButtonsData =  [
         id: "equals",
         name: "equal",
         value: "=",
+        type: "button",
+    },
+    // new added buttons
+    {
+        id: "open-bracket",
+        name: "o-bracket",
+        value: "(",
+        type: "button",
+    },
+    {
+        id: "close-bracket",
+        name: "c-bracket",
+        value: ")",
+        type: "button",
+    },
+    {
+        id: "change",
+        name: "plus-minus",
+        value: `\u{00B1}`,
+        type: "button",
+    },
+    {
+        id: "square",
+        name: "square",
+        value: `x\u{00B2}`,
         type: "button",
     },
     

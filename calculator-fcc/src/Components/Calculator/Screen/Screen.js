@@ -26,14 +26,14 @@ export default class Screen extends React.Component {
                                 return <span id={key} key={crypto.randomUUID()}>{value ? "ON" : "OFF"}</span>;
 
                             case 1: // Current memory value ?
-                                return <span id={key} key={crypto.randomUUID()} style={ value > 0 ? {color: infoLineColor.fill} : {color: infoLineColor.empty}}>Mem:{value || "0"}</span>;
+                                return <span id={key} key={crypto.randomUUID()} style={ value > 0 ? {color: infoLineColor.fill} : {color: infoLineColor.empty}}>Mem: {value || "0"}</span>;
 
                             case 3: // count of brackets
                                 return <span id={key} key={crypto.randomUUID()}>
                                     {
                                         value === 0 
-                                            ? <span id="noinvalidbrackets" style={{color: infoLineColor.empty}} key={crypto.randomUUID()}>()</span>
-                                            : <><span id="open-bracket" style={{color: infoLineColor.fill}} key={crypto.randomUUID()}>(</span>{value > 1 ? value : "" }<span id="close-bracket" style={{color: infoLineColor.wrong}} key={crypto.randomUUID()}>)</span></>
+                                            ? <span id="noinvalidbrackets" style={{color: infoLineColor.empty}} key={crypto.randomUUID()}>( )</span>
+                                            : <><span id="open-bracket" style={{color: infoLineColor.fill}} key={crypto.randomUUID()}>( </span>{value > 1 ? value : "" }<span id="close-bracket" style={{color: infoLineColor.wrong}} key={crypto.randomUUID()}> )</span></>
                                     }
                                 </span>;
                             
@@ -42,7 +42,7 @@ export default class Screen extends React.Component {
 
                             case 5: // count items in shortHistory
                                 const length = value.length;
-                                return <span id={key} key={crypto.randomUUID()} style={ length > 0 ? {color: infoLineColor.fill} : {color: infoLineColor.empty}}>{`\u{1F551}`}{length > 0 ? length : ""}</span>;
+                                return <span id={key} key={crypto.randomUUID()} style={ length > 0 ? {color: infoLineColor.fill} : {color: infoLineColor.empty}}>{`\u{1F551}`} <sub>{length > 0 ? length : ""}</sub></span>;
                         }
                     })}
                 </div>

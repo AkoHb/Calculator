@@ -1,8 +1,13 @@
 import React from "react";
 import { DefaultButtonsData } from "./DefaultButtonsData";
-import styles from './DefaultButtons.css'
+import './DefaultButtons.css'
 
 export default class DefaultButtons extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
         return (
             React.createElement(
@@ -16,6 +21,7 @@ export default class DefaultButtons extends React.Component {
                     {
                         ...obj, 
                         key: crypto.randomUUID(),
+                        onClick: this.props.children,
                         style: {
                             gridArea: obj.id
                         }
