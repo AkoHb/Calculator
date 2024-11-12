@@ -5,7 +5,6 @@ import './DefaultButtons.css'
 export default class DefaultButtons extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
@@ -21,7 +20,8 @@ export default class DefaultButtons extends React.Component {
                     {
                         ...obj, 
                         key: crypto.randomUUID(),
-                        onClick: this.props.children,
+                        onClick: this.props.onClick,
+                        disabled: obj.id === "power" ? "" : this.props.disabled,
                         style: {
                             gridArea: obj.id
                         }

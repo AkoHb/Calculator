@@ -25,7 +25,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className="calc-body">
                 <Screen />
-                <DefaultButtons>{(e) => this.handleClick(e.target.value)}</DefaultButtons>
+                <DefaultButtons onClick = {(e) => this.handleClick(e.target.name)} disabled = {this.state.infoLine.powerOn}></DefaultButtons>
             </div> 
       </div>
     );
