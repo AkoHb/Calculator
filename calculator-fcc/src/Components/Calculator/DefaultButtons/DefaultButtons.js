@@ -26,7 +26,7 @@ export default class DefaultButtons extends React.Component {
                             gridArea: obj.id
                         }
                     }, 
-                    obj.value))
+                    obj.id === "power" ? this.props.disabled ? "ON" : "OFF" : obj.value))
             )
         )
     }
