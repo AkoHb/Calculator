@@ -60,37 +60,53 @@ function canCloseBracket (arr, countOfBrackets) {
 };
 
 function changeSign (userInpArr, mathFormArr) {
-    if (userInpArr.length === 0) {
+    
+    const userInpLen = userInpArr.length;
+    
+    if (userInpLen === 0) {
         return {
-            mathFormArr: ["(-1)*"],
+            mathFormArr: ["(-1)*"], 
             currentUserInput: ["-"]
-        }
+        };
+    };
+
+    if (userInpLen === 1) {
+
     } else {
-        let reversedUserInp = userInpArr.reverse();
+        let reversedUserInp = [...userInpArr].reverse();
         let flag = false;
+
+        if (["*(-1)", "(-1)*"].includes(mathFormArr.at(-1))) {
+            mathFormArr.pop();  
+        } else {
+            mathFormArr.push("*(-1)");
+        }
+
         for (let i = 0; i < reversedUserInp.length; i++) {
             if (/[^\d\.]/.test(reversedUserInp[i])) {
                 if (["+", "-"].includes(reversedUserInp[i])) {
-                    reversedUserInp[i] = reversedUserInp[i] === "+" ? "-" : "+";
+                    reversedUserInp[i] = reversedUserInp[i] === "+" ? "-" : "+"; // Toggle the sign
                     flag = true;
                     break;
-                } 
-                else {
-                    reversedUserInp.splice(i, 0, `${reversedUserInp[i]}(-`)
+                } else if (reversedUserInp[i] === "(") {
+                    reversedUserInp.splice(i, 1);  
+                    if (reversedUserInp.at(-1) === ")") {
+                        reversedUserInp.pop(); 
+                    }
                     flag = true;
                     break;
-                } 
+                }
             }
-            // console.log(reversedUserInp)
         }
-        if (!flag) {reversedUserInp.push("(-")}
-        
+
+        if (!flag) {
+            reversedUserInp.push("(-1)*");
+        }
+
         return {
-            mathFormArr: [...mathFormArr, "*(-1)"],
-            currentUserInput: [...reversedUserInp.reverse(), ")"]
-        } 
-
-
+            mathFormArr: [...mathFormArr],
+            currentUserInput: [...reversedUserInp.reverse()] 
+        };
     }
 
 }
